@@ -8,6 +8,7 @@ const PINYIN_STYLE = {
 const DEFAULT_OPTIONS = {
   // 过滤掉汉字之外的内容
   only_chinese: false,
+  return_orignal:false,// 返回对应的原始字符
   style: PINYIN_STYLE.NORMAL
 };
 
@@ -53,7 +54,11 @@ function zh(hans, options) {
       i++;
       continue;
     } else if (nohan !== ''){
-      result.push(nohan);
+      if(config.return_orignal){
+        result.push([nohan,nohan]);
+      }else{
+        result.push(nohan);
+      }
       nohan = '';
     }
 
@@ -68,11 +73,26 @@ function zh(hans, options) {
     } else {
       pin = pin.split(' ');
     }
-    result = result.concat(pin);
+
+    let ret = [];
+    pin.forEach((v,k) => {
+      if(config.return_orignal){
+        ret = [v,hans[i+k]]
+      }else{
+        ret = v
+      }
+      result.push(ret);
+    });
+
     i += p[1];
   }
+
   if(nohan !== ''){
-    result.push(nohan);
+    if(config.return_orignal){
+      result.push([nohan,nohan]);
+    }else{
+      result.push(nohan);
+    }
     nohan = '';
   }
   return result;
@@ -104,6 +124,7 @@ function searchPhrase(code, index, hans) {
     // console.log(key, phrases[key]);
     if (phrases[key]) return [phrases[key], phraseLen];
   }
+
   return [words[code].split(' ')[0], 1];
 }
 
