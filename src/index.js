@@ -40,7 +40,7 @@ function zh(hans, options) {
   let result = [];
   let nohan = '';
 
-  for (let i = 0; i < hans.length;) {
+  for (let i = 0; i < hans.length;i++) {
 
 
     // 当前汉字的code
@@ -51,7 +51,6 @@ function zh(hans, options) {
       if (!config.only_chinese) {
         nohan += hans[i];
       }
-      i++;
       continue;
     } else if (nohan !== ''){
       if(config.return_orignal){
@@ -77,14 +76,14 @@ function zh(hans, options) {
     let ret = [];
     pin.forEach((v,k) => {
       if(config.return_orignal){
-        ret = [v,hans[i+k]]
+        ret = [v,hans[i+k]];
       }else{
-        ret = v
+        ret = v;
       }
       result.push(ret);
     });
 
-    i += p[1];
+    i += p[1]-1;
   }
 
   if(nohan !== ''){

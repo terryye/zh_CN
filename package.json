@@ -1,7 +1,7 @@
 {
-  "name": "zh_cn",
-  "version": "0.0.7",
-  "description": "将汉语转换为拼音",
+  "name": "hz2pinyin",
+  "version": "0.0.9",
+  "description": "汉语转换拼音",
   "main": "./dist/zh_cn.min.js",
   "scripts": {
     "lint": "eslint src --fix",
@@ -11,23 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZiQiangWang/zh_CN.git"
+    "url": "git+https://github.com/terryye/zh_CN.git"
   },
-  "author": "ZiQiangWang",
+  "author": "terryye",
   "keywords": [
-    "汉字",
-    "拼音",
-    "多音字",
-    "pinyin",
-    "lite",
-    "mini",
-    "zh"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ZiQiangWang/zh_CN/issues"
+    "url": "https://github.com/terryye/zh_CN/issues"
   },
-  "homepage": "https://github.com/ZiQiangWang/zh_CN#readme",
+  "homepage": "https://github.com/terryye/zh_CN#readme",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-loader": "^7.1.4",
@@ -36,7 +29,7 @@
     "colors": "^1.3.0",
     "eslint": "^4.19.1",
     "jest": "^22.4.3",
-    "webpack": "^3.8.1",
+    "webpack": "~3.8.1",
     "coveralls": "^3.0.1"
   }
 }

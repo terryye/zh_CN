@@ -18,11 +18,5 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
       },
     ]
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      output: { comments: false },
-      compress: { warnings: false }
-    })
-  ]
+  }
 };
