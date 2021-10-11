@@ -1,6 +1,6 @@
 {
   "name": "hz2pinyin",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "汉语转换拼音",
   "main": "./dist/zh_cn.min.js",
   "scripts": {

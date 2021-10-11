@@ -8,7 +8,7 @@ const PINYIN_STYLE = {
 const DEFAULT_OPTIONS = {
   // 过滤掉汉字之外的内容
   only_chinese: false,
-  return_orignal:false,// 返回对应的原始字符
+  return_origin:false,// 返回对应的原始字符
   style: PINYIN_STYLE.NORMAL
 };
 
@@ -53,7 +53,7 @@ function zh(hans, options) {
       }
       continue;
     } else if (nohan !== ''){
-      if(config.return_orignal){
+      if(config.return_origin){
         result.push([nohan,nohan]);
       }else{
         result.push(nohan);
@@ -75,7 +75,7 @@ function zh(hans, options) {
 
     let ret = [];
     pin.forEach((v,k) => {
-      if(config.return_orignal){
+      if(config.return_origin){
         ret = [v,hans[i+k]];
       }else{
         ret = v;
@@ -87,7 +87,7 @@ function zh(hans, options) {
   }
 
   if(nohan !== ''){
-    if(config.return_orignal){
+    if(config.return_origin){
       result.push([nohan,nohan]);
     }else{
       result.push(nohan);
